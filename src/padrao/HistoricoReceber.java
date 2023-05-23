@@ -55,5 +55,24 @@ public class HistoricoReceber {//Herança com HistoricoPagar
 		momentaneo = null;
 		return valor_total;
 	}
+	
+	public boolean verificaExistencia(ContaAReceber conta)
+	{
+		if(listaContas.contains(conta))
+		{
+			return true;
+		}
+			return false;
+	}
+	
+	public void removeConta(ContaAReceber conta)
+	{	
+		if(listaContas.contains(conta))
+		{
+		listaContas.remove(conta);
+		}else {
+		System.out.println("Objeto não encontrado na lista.");
+		}
+	}
 
 }

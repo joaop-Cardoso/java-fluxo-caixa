@@ -26,6 +26,10 @@ public class Teste {
 		
 		System.out.println(historico.getInfo(conta1));
 		System.out.println("o valo total é:" + historico.calculaValor());
+		System.out.println(historico.verificaExistencia(conta2));
+		historico.removeConta(conta2);
+		System.out.println(historico.verificaExistencia(conta2));
+		
 		
 		
 	}
