@@ -2,17 +2,17 @@ package padrao;
 
 import java.time.LocalDate;
 
-public class ContaAReceber extends Conta{
+public class ContaAPagar extends Conta{
 	
-	private Cliente cliente;
+	private Fornecedor fornecedor;
 	private static int id = 1;
 	private static String ano;
 	private static String anoAux;
 	
-	public ContaAReceber(LocalDate data, String descricao, String banco, Cliente cliente, double valor)
+	public ContaAPagar(LocalDate data, String descricao, String banco, Fornecedor fornecedor, double valor)
 	{
 		super(data, descricao, banco, valor);
-		this.cliente = cliente;
+		this.fornecedor = fornecedor;
 		trocaAno(data);
 	}
 
@@ -39,7 +39,7 @@ public class ContaAReceber extends Conta{
 
 	@Override
 	public String toString() {
-		return "Descrição da conta: [data=" + this.getData() + ", descricao=" + this.getDescricao() + ", banco=" + this.getBanco() + ", cliente=" + this.cliente.getNome()
+		return "[data=" + this.getData() + ", descricao=" + this.getDescricao() + ", banco=" + this.getBanco() + ", fornecedor=" + this.fornecedor.getNome()
 		+ ", valor=R$" + this.getValor() + ", id=" + this.getId() + "]";
 	}
 

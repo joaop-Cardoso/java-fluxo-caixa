@@ -3,34 +3,20 @@ package padrao;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Fornecedor {//herança com classe Cliente
-
-	private String nomeEmpresa;
-	private String email;
+public class Fornecedor extends Entidade{
+	
 	private String cnpj;
+	private static int codigo= 0;
 	
-	Fornecedor(String nomeEmpresa, String email, String cnpj)
+	public Fornecedor(String nome, String email, String cnpj)
 	{
-		this.nomeEmpresa = nomeEmpresa; //nome de empresa pode ser literalmente qualquer coisa, por isso não necessita verificaçao
-		setEmail(email); //herança-atributo repetido
+		super(nome, email);
 		setCnpj(cnpj);
+		codigo++;
 	}
 	
+	//setters
 	
-	public void setNome(String nomeEmpresa) {
-			this.nomeEmpresa = nomeEmpresa;
-		}
-	public void setEmail(String email)//herança-atributo repetido
-	{
-		String regex = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{1,20}$";
-		Pattern pattern = Pattern.compile(regex, Pattern.CASE_INSENSITIVE);
-		Matcher matcher = pattern.matcher(email);
-		
-		if(matcher.matches())
-		{
-			this.email = email;
-		}
-	}
 	public void setCnpj(String cnpj)
 	{
 		String regex = "[0-9]{14}";
@@ -51,13 +37,19 @@ public class Fornecedor {//herança com classe Cliente
 			System.out.println("Cnpj inválido.");
 		}
 	}
-	public String getDescricao()//herança com override
+
+	//getters
+	
+	public String getDescricao()
 
 	{
-		String descricao = "Nome do cliente: " + this.nomeEmpresa + "\nEmail do cliente: " + this.email + 
-				"\nCPF do cliente: " + this.cnpj;	
+		String descricao = "Nome do fornecedor: " + this.getNome() + "\nEmail do fornecedor: " + this.getEmail() + 
+				"\nCNPJ do fornecedor: " + this.cnpj + "\nCódigo do fornecedor: " + this.getCodigo();	
 		
 		return new String(descricao);
 	}
+	public String getCodigo() {
+		String codigoFormatado = "F" + codigo;
+		return codigoFormatado;
+	}
 }
-

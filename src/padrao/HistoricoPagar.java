@@ -2,24 +2,24 @@ package padrao;
 
 import java.util.ArrayList;
 
-public class HistoricoReceber implements Historico{
+public class HistoricoPagar implements Historico{
 	
-	static ArrayList<ContaAReceber> listaContas;
+	static ArrayList<ContaAPagar> listaContas;
 
 
-	public HistoricoReceber()
+	public HistoricoPagar()
 	{
 		if (listaContas == null)
 		{
-			listaContas = new ArrayList<ContaAReceber>();
+			listaContas = new ArrayList<ContaAPagar>();
 		}
 	}
 	
-	public HistoricoReceber(ContaAReceber ...objetos)//construtor podendo já passar objetos
+	public HistoricoPagar(ContaAPagar ...objetos)//construtor podendo já passar objetos
 	{
 		if (listaContas == null)
 		{
-			listaContas = new ArrayList<ContaAReceber>();
+			listaContas = new ArrayList<ContaAPagar>();
 		}
 		for (int i = 0; i<objetos.length; i++) 
 		{
@@ -27,14 +27,14 @@ public class HistoricoReceber implements Historico{
 		}
 	}	
 	
-	public void setContas(ContaAReceber ... contas){
+	public void setContas(ContaAPagar ... contas){
 		for (int i = 0; i<contas.length; i++) 
 		{
 			listaContas.add(contas[i]);
 		}
 	}
 
-	public String getInfo(ContaAReceber conta)
+	public String getInfo(ContaAPagar conta)
 		{
 		        if(listaContas.contains(conta)) {
 		            return conta.toString();
@@ -48,7 +48,7 @@ public class HistoricoReceber implements Historico{
 	public double calculaValor()
 	{	
 		double valor_total = 0;
-		ContaAReceber momentaneo;
+		ContaAPagar momentaneo;
 		for (int i = 0; i<listaContas.size(); i++) 
 		{
 			momentaneo = listaContas.get(i);
@@ -58,7 +58,7 @@ public class HistoricoReceber implements Historico{
 		return valor_total;
 	}
 
-	public boolean verificaExistencia(ContaAReceber conta)
+	public boolean verificaExistencia(ContaAPagar conta)
 	{
 		if(listaContas.contains(conta))
 		{
@@ -67,7 +67,7 @@ public class HistoricoReceber implements Historico{
 			return false;
 	}
 
-	public void removeConta(ContaAReceber conta)
+	public void removeConta(ContaAPagar conta)
 	{	
 		if(listaContas.contains(conta))
 		{
