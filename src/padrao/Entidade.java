@@ -7,11 +7,13 @@ public abstract class Entidade {
 
 	private String nome;
 	private String email;
+	private String sexo;
 	
-	public Entidade(String nome, String email)
+	public Entidade(String nome, String email, String sexo)
 	{
 		setNome(nome);
 		setEmail(email);
+		setSexo(sexo);
 	}
 	
 	//setters
@@ -59,8 +61,26 @@ public abstract class Entidade {
 			System.out.println("Email inválido.");
 		}
 	}
-
-
+	
+	public void setSexo(String sexo)
+	{
+		if(sexo.contentEquals("m") || sexo.contentEquals("M"))
+		{
+			this.sexo = sexo;
+		}
+		else if(sexo.contentEquals("f") || sexo.contentEquals("F"))
+		{
+			this.sexo = sexo;
+		}
+		else
+		{
+			System.out.println("Entrada inválida.");
+		}
+		
+	}
+	
+	public abstract void setTitulo(String sexo);
+	
 	//getters
 	
 	public String getNome()
@@ -70,6 +90,10 @@ public abstract class Entidade {
 	public String getEmail()
 	{
 		return new String(email);
+	}
+	public String getSexo()
+	{
+		return new String(sexo);
 	}
 	
 	// abstracts 

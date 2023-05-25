@@ -6,13 +6,15 @@ import java.util.regex.Pattern;
 public class Fornecedor extends Entidade{
 	
 	private String cnpj;
+	private String titulo;
 	private static int codigo= 0;
 	
-	public Fornecedor(String nome, String email, String cnpj)
+	public Fornecedor(String nome, String email, String sexo, String cnpj)
 	{
-		super(nome, email);
+		super(nome, email, sexo);
 		setCnpj(cnpj);
 		codigo++;
+		setTitulo(getSexo());
 	}
 	
 	//setters
@@ -38,16 +40,32 @@ public class Fornecedor extends Entidade{
 		}
 	}
 
+	public void setTitulo(String sexo)
+	{
+		if(sexo.equals("m") || sexo.equals("M"))
+		{
+			this.titulo = "Prezado Colaborador Senhor";
+		}
+		else if(sexo.equals("f") || sexo.equals("F"))
+		{
+			this.titulo = "Prezada Colaboradora Senhora";
+		}
+		else
+		{
+			System.out.println("Entrada inválida.");
+		}
+	}
 	//getters
 	
 	public String getDescricao()
 
 	{
-		String descricao = "Nome do fornecedor: " + this.getNome() + "\nEmail do fornecedor: " + this.getEmail() + 
+		String descricao = "Nome do fornecedor: " + this.titulo +" "+ this.getNome() + "\nEmail do fornecedor: " + this.getEmail() + 
 				"\nCNPJ do fornecedor: " + this.cnpj + "\nCódigo do fornecedor: " + this.getCodigo();	
 		
 		return new String(descricao);
 	}
+	
 	public String getCodigo() {
 		String codigoFormatado = "F" + codigo;
 		return codigoFormatado;
