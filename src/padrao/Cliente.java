@@ -8,6 +8,7 @@ public class Cliente extends Entidade {
 	private String cpf;
 	private String titulo;
 	private static int codigo = 0;
+	private String codigoCliente;
 
 	public Cliente(String nome, String email, String sexo, String cpf) 
 	{
@@ -66,7 +67,7 @@ public class Cliente extends Entidade {
 	}
 	
 	public String getCodigo() {
-		String codigoFormatado = "C" + codigo;
-		return codigoFormatado;
+		this.codigoCliente = "C" + codigo;
+		return new String(codigoCliente);
 	}
 }

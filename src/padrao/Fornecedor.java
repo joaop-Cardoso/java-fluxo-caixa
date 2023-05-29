@@ -8,6 +8,7 @@ public class Fornecedor extends Entidade{
 	private String cnpj;
 	private String titulo;
 	private static int codigo= 0;
+	private String codigoFornecedor;
 	
 	public Fornecedor(String nome, String email, String sexo, String cnpj)
 	{
@@ -67,7 +68,7 @@ public class Fornecedor extends Entidade{
 	}
 	
 	public String getCodigo() {
-		String codigoFormatado = "F" + codigo;
-		return codigoFormatado;
+		this.codigoFornecedor = "F" + codigo;
+		return codigoFornecedor;
 	}
 }
