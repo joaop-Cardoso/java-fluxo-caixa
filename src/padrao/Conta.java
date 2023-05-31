@@ -39,5 +39,7 @@ public abstract class Conta {
 		double valor3 = Double.parseDouble(valor2);
 		return valor3;
 	}
+	
+	public abstract String getTipo();
 
 }

@@ -36,6 +36,12 @@ public class ContaAReceber extends Conta{
 		String dataid = ano+"-"+id;
 		return dataid;
 	}
+	
+	@Override
+	public String getTipo()
+	{
+		return "Conta a Receber";
+	}
 
 	@Override
 	public String toString() {
