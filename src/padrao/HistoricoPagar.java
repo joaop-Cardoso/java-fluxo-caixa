@@ -36,12 +36,7 @@ public class HistoricoPagar implements Historico{
 
 	public String getInfo(ContaAPagar conta)
 		{
-		        if(listaContas.contains(conta)) {
-		            return conta.toString();
-		        } else {
-		            System.out.println("Objeto não encontrado na lista.");
-		            return null;
-		        }
+           return conta.toString();
 		}
 
 	@Override

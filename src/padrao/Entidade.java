@@ -79,8 +79,6 @@ public abstract class Entidade {
 		
 	}
 	
-	public abstract void setTitulo(String sexo);
-	
 	//getters
 	
 	public String getNome()

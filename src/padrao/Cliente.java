@@ -6,7 +6,6 @@ import java.util.regex.Pattern;
 public class Cliente extends Entidade {
 	
 	private String cpf;
-	private String titulo;
 	private static int codigo = 0;
 	private String codigoCliente;
 
@@ -15,7 +14,6 @@ public class Cliente extends Entidade {
 		super(nome, email, sexo);
 		setCpf(cpf);
 		codigo++;
-		setTitulo(getSexo());
 	}
 	
 	//setters
@@ -40,27 +38,28 @@ public class Cliente extends Entidade {
 		}
 	}
 	
-	public void setTitulo(String sexo)
+	//getters
+	
+	public String getTitulo(String sexo)
 	{
+		String titulo = new String();
+		
 		if(sexo.equals("m") || sexo.equals("M"))
 		{
-			this.titulo = "Prezado Senhor Cliente";
+			titulo = "Prezado Senhor Cliente";
 		}
 		else if(sexo.equals("f") || sexo.equals("F"))
 		{
-			this.titulo = "Prezada Senhora Cliente";
+			titulo = "Prezada Senhora Cliente";
 		}
-		else
-		{
-			System.out.println("Entrada inválida.");
-		}
+
+		return new String(titulo);		
 	}
-	//getters
 	
 	public String getDescricao()
 
 	{
-		String descricao = "Nome do cliente: " + this.titulo + " " + this.getNome() + "\nEmail do cliente: " + this.getEmail() + 
+		String descricao = "Nome do cliente: " + getTitulo(getSexo()) + " " + this.getNome() + "\nEmail do cliente: " + this.getEmail() + 
 				"\nCPF do cliente: " + this.cpf + "\nCódigo do cliente: " + this.getCodigo();	
 		
 		return new String(descricao);
