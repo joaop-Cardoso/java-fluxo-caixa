@@ -13,7 +13,7 @@ public abstract class Conta {
 		this.data = data;
 		this.descricao = descricao;
 		this.banco = banco;
-		this.valor = valor;
+		setValor(valor);
 	}
 	
 	public LocalDate getData()
@@ -38,6 +38,15 @@ public abstract class Conta {
 		String valor2 = String.valueOf(this.valor);
 		double valor3 = Double.parseDouble(valor2);
 		return valor3;
+	}
+	
+	public void setValor(double valor) throws AltoValorException
+	{
+		if(valor >= 10000)
+		{
+			throw new AltoValorException("Valor muito alto!");
+		}
+		this.valor = valor;
 	}
 	
 	public abstract String getTipo();

@@ -105,6 +105,20 @@ public class Teste {
 		System.out.println(IdentificadorDeConta.identificarConta(nova));
 		Conta novanova = new ContaAPagar(LocalDate.of(2017, 9, 03), "compra fictícia", "Nubank", f1, 7200.65);
 		System.out.println(IdentificadorDeConta.identificarConta(novanova));
+		//------------------fim de teste--------------------
+		
+		
+		
+		//---------teste tratamento de excessão---------------
+		try {
+		ContaAPagar contaP4 = new ContaAPagar(LocalDate.of(2023, 06, 27), "compra de 2kg de carne", "Banco do Brasil", f2, 42000.80);
+		}
+		catch(AltoValorException erro)
+		{
+			System.out.println("\nValor muito alto. Não foi cadastrado no sistema, favor olhar novamente.");
+		}
+		//------------------fim de teste--------------------
+		
 	}
 	
 }
