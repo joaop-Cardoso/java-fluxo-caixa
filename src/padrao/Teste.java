@@ -45,13 +45,13 @@ public class Teste {
 		System.out.println(contaP1.toString());
 		
 		//{teste do incremento do id de ContaAReceber com novo objeto de ano igual}
-		Fornecedor f2 = new Fornecedor("Almerinda Dois", "almerindamassa2@gmail.com","F","22345678910123" );
+		Fornecedor f2 = new Fornecedor("Calos Legal", "carloslegal@gmail.com","M","22345678910123" );
 		ContaAPagar contaP2 = new ContaAPagar(LocalDate.of(2000, 04, 03), "compra de insumos", "Banco do Brasil", f2, 42.80);
 		System.out.println("id: " + contaP2.getId());
 				
 		//{teste da reinicialização do id de ContaAReceber com novo objeto de ano diferente}
-		Fornecedor f3 = new Fornecedor("Almerinda Dois", "almerindamassa2@gmail.com","F","32345678910123" );
-		ContaAPagar contaP3 = new ContaAPagar(LocalDate.of(2001, 11, 29), "compra de insumos", "Banco do Brasil", f3, 44.80);
+		Fornecedor f3 = new Fornecedor("Vanessão Manerão", "almerindamassa2@gmail.com","F","32345678910123" );
+		ContaAPagar contaP3 = new ContaAPagar(LocalDate.of(2001, 11, 29), "compra de insumos", "Banco do Brasil", f3, 94.30);
 		System.out.println("id: " + contaP3.getId());
 		System.out.println("\n");
 		//------------------fim de teste--------------------
@@ -103,7 +103,7 @@ public class Teste {
 		//---------teste IdentificadorDeConta---------------
 		Conta nova = new ContaAReceber(LocalDate.of(2015, 12, 29), "compra fictícia", "Bradesco", c1, 340.99);
 		System.out.println(IdentificadorDeConta.identificarConta(nova));
-		Conta novanova = new ContaAPagar(LocalDate.of(2017, 9, 03), "compra fictícia", "Nubank", f1, 7200.65);
+		Conta novanova = new ContaAPagar(LocalDate.of(2018, 9, 03), "compra fictícia", "Nubank", f1, 7200.65);
 		System.out.println(IdentificadorDeConta.identificarConta(novanova));
 		//------------------fim de teste--------------------
 		
@@ -117,7 +117,16 @@ public class Teste {
 		{
 			System.out.println("\nValor muito alto. Não foi cadastrado no sistema, favor olhar novamente.");
 		}
+		System.out.println("\n");
 		//------------------fim de teste--------------------
+		
+		
+		//---------teste relatorios ArrayList---------------
+		hP.setContas(contaP2);
+		System.out.println("Relatorio em função do nome de forma decrescente:\n" + hP.RelacaoDecrescenteNome());
+		System.out.println("\n");
+		System.out.println("Relatorio em função do valor de forma crescente:\n" + hP.RelacaoCrescenteValor());
+		
 		
 	}
 	

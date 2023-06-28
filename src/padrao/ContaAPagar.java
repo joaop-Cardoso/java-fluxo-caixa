@@ -16,7 +16,7 @@ public class ContaAPagar extends Conta{
 		trocaAno(data);
 	}
 
-	private void trocaAno(LocalDate data)
+	public void trocaAno(LocalDate data)
 	{
 		ano = data.toString().substring(0, 4);//passando a data para string e pegando o valor dos 4 primeiros caracteres
 		
@@ -41,6 +41,11 @@ public class ContaAPagar extends Conta{
 	public String getTipo()
 	{
 		return "Conta a Pagar";
+	}
+	
+	public String getFornecedorNome()
+	{
+		return new String(this.fornecedor.getNome());
 	}
 
 	@Override

@@ -1,6 +1,8 @@
 package padrao;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class HistoricoPagar implements Historico{
 	
@@ -71,5 +73,33 @@ public class HistoricoPagar implements Historico{
 		System.out.println("Objeto não encontrado na lista.");
 		}
 	}
-
+	
+	private String relacao(ArrayList<ContaAPagar> a)
+	{
+		String relatorio = "";
+		for(int i = 0; i<a.size(); i++)
+		{
+			relatorio = relatorio + "\n" + "Nome do fornecedor: " + a.get(i).getFornecedorNome()  + ", Valor a ser pago: R$"+ a.get(i).getValor();
+		}
+		return relatorio;
+	}
+	
+	public String RelacaoDecrescenteNome()
+	{	
+		ArrayList<ContaAPagar> cloneListaContas = new ArrayList<>(listaContas);
+		
+		Collections.sort(cloneListaContas, Comparator.comparing(ContaAPagar::getFornecedorNome).reversed());
+		
+		return relacao(cloneListaContas);
+	}
+	
+	public String RelacaoCrescenteValor()
+	{
+		ArrayList<ContaAPagar> cloneListaContas = new ArrayList<>(listaContas);
+		
+		Collections.sort(cloneListaContas, Comparator.comparing(ContaAPagar::getValor));
+		
+		return relacao(cloneListaContas);
+	}
+	
 }

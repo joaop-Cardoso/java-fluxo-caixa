@@ -14,12 +14,13 @@ public abstract class Conta {
 		this.descricao = descricao;
 		this.banco = banco;
 		setValor(valor);
+		
 	}
 	
 	public LocalDate getData()
 	{
 		LocalDate nova;
-		nova = data;
+		nova = this.data;
 		return data;
 	}
 	
