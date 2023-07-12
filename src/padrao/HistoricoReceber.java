@@ -1,11 +1,11 @@
 package padrao;
 
+import java.util.List;
 import java.util.ArrayList;
 
 public class HistoricoReceber implements Historico{
 	
-	static ArrayList<ContaAReceber> listaContas;
-
+	static private List<ContaAReceber> listaContas;
 
 	public HistoricoReceber()
 	{
@@ -39,6 +39,12 @@ public class HistoricoReceber implements Historico{
 		  return conta.toString();
 		}
 
+	public ArrayList<ContaAReceber> getArray()
+	{
+		ArrayList<ContaAReceber> novo = new ArrayList<ContaAReceber>(listaContas);
+		return novo;
+	}
+	
 	@Override
 	public double calculaValor()
 	{	
@@ -67,8 +73,8 @@ public class HistoricoReceber implements Historico{
 		if(listaContas.contains(conta))
 		{
 		listaContas.remove(conta);
-		}else {
-		System.out.println("Objeto não encontrado na lista.");
+		}else{
+		throw new NullPointerException("Objeto não encontrado na lista.");
 		}
 	}
 

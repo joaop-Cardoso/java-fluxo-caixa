@@ -42,6 +42,16 @@ public class ContaAReceber extends Conta{
 	{
 		return "Conta a Receber";
 	}
+	
+	public Cliente getCliente()
+	{
+		if(this.cliente == null)
+		{
+			throw new NullPointerException("Cliente inexistente!");
+		}
+		Cliente clienteigual = cliente;
+		return clienteigual;					//se de merda o erro ta aqui ou na de cima. clienteigual tem que se IDENTICO a cliente e te os memo valo
+	}
 
 	@Override
 	public String toString() {

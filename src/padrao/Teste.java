@@ -5,7 +5,7 @@ import java.time.LocalDate;
 public class Teste {
 
 	public static void main(String[] args) {
-		
+		/*
 		//----------------teste de Cliente------------------
 		Cliente c1 = new Cliente("Joaozinho", "joaozinholegal@gmail.com", "M", "12345678910");
 		System.out.println(c1.getDescricao());
@@ -127,6 +127,31 @@ public class Teste {
 		System.out.println("\n");
 		System.out.println("Relatorio em função do valor de forma crescente:\n" + hP.RelacaoCrescenteValor());
 		
+		*/
+		Cliente jamal = new Cliente("jamal", "jamal@hotmail.com", "M", "11592865666");
+		Cliente judas = new Cliente("judas", "judas@hotmail.com", "M", "11792865666");
+		Cliente trabaiao = new Cliente("trabaiao", "sotrabaioso@hotmail.com", "M", "11792365766");
+		
+		ContaAReceber venda1parajamal = new ContaAReceber(LocalDate.of(2015, 12, 29), "compra de maconha", "Bradesco", jamal, 340.99);
+		ContaAReceber venda1parajudas = new ContaAReceber(LocalDate.of(2019, 12, 29), "compra de cocaina", "Bradesco", judas, 9999.99);
+		ContaAReceber venda2parajudas = new ContaAReceber(LocalDate.of(2019, 12, 29), "compra de cocaina", "Bradesco", judas, 9999.99);
+		ContaAReceber venda1paratrabaiao = new ContaAReceber(LocalDate.of(2019, 12, 29), "compra de penis vuador", "Bradesco", trabaiao, 9999.99);
+		ContaAReceber venda2paratrabaiao = new ContaAReceber(LocalDate.of(2019, 12, 29), "compra de penis vuador", "Bradesco", trabaiao, 9999.99);
+		ContaAReceber venda3paratrabaiao = new ContaAReceber(LocalDate.of(2019, 12, 29), "compra de penis vuador", "Bradesco", trabaiao, 9999.99);
+		ContaAReceber venda4paratrabaiao = new ContaAReceber(LocalDate.of(2019, 12, 29), "compra de penis vuador", "Bradesco", trabaiao, 9999.99);
+	
+		HistoricoReceber historico = new HistoricoReceber(venda1parajamal, venda1parajudas, venda2parajudas, venda1paratrabaiao, venda2paratrabaiao, venda3paratrabaiao, venda4paratrabaiao);
+		RankingClientes ranking = new RankingClientes(historico);
+		
+		ranking.associaClienteCategoria(jamal);
+		ranking.associaClienteCategoria(judas);
+		ranking.associaClienteCategoria(trabaiao);
+		
+		System.out.println(ranking.relatorioRanking());
+		System.out.println(ranking.calculaValorCliente(jamal));
+		System.out.println(ranking.consultaCategoriaString(trabaiao));
+		System.out.println(ranking.consultaCategoriaString(judas));
+		System.out.println(ranking.consultaCategoriaString(jamal));
 		
 	}
 	

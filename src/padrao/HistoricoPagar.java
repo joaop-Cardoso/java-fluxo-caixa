@@ -1,13 +1,13 @@
 package padrao;
 
+import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class HistoricoPagar implements Historico{
 	
-	static ArrayList<ContaAPagar> listaContas;
-
+	static private List<ContaAPagar> listaContas;
 
 	public HistoricoPagar()
 	{
@@ -86,7 +86,7 @@ public class HistoricoPagar implements Historico{
 	
 	public String RelacaoDecrescenteNome()
 	{	
-		ArrayList<ContaAPagar> cloneListaContas = new ArrayList<>(listaContas);
+		ArrayList<ContaAPagar> cloneListaContas = new ArrayList<ContaAPagar>(listaContas);
 		
 		Collections.sort(cloneListaContas, Comparator.comparing(ContaAPagar::getFornecedorNome).reversed());
 		
@@ -95,7 +95,7 @@ public class HistoricoPagar implements Historico{
 	
 	public String RelacaoCrescenteValor()
 	{
-		ArrayList<ContaAPagar> cloneListaContas = new ArrayList<>(listaContas);
+		ArrayList<ContaAPagar> cloneListaContas = new ArrayList<ContaAPagar>(listaContas);
 		
 		Collections.sort(cloneListaContas, Comparator.comparing(ContaAPagar::getValor));
 		
