@@ -7,7 +7,7 @@ import java.util.Comparator;
 
 public class HistoricoPagar implements Historico{
 	
-	static private List<ContaAPagar> listaContas;
+	private List<ContaAPagar> listaContas;
 
 	public HistoricoPagar()
 	{

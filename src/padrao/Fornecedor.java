@@ -41,26 +41,26 @@ public class Fornecedor extends Entidade{
 
 	//getters
 	
-	public String getTitulo(String sexo)
+	public String getTitulo(Fornecedor fornecedor)
 	{
 		String titulo = new String();
 		
-		if(sexo.equals("m") || sexo.equals("M"))
+		if(fornecedor.getSexo().equals("m") || fornecedor.getSexo().equals("M"))
 		{
-			titulo = "Prezado Colaborador Senhor";
+			titulo = "Prezado Senhor Fornecedor";
 		}
-		else if(sexo.equals("f") || sexo.equals("F"))
+		else if(fornecedor.getSexo().equals("f")|| fornecedor.getSexo().equals("F"))
 		{
-			titulo = "Prezada Colaboradora Senhora";
+			titulo = "Prezada Senhora Fornecedora";
 		}
-	
-		return new String(titulo);
+
+		return new String(titulo);		
 	}
 	
 	public String getDescricao()
 
 	{
-		String descricao = "Nome do fornecedor: " + getTitulo(getSexo()) +" "+ this.getNome() + "\nEmail do fornecedor: " + this.getEmail() + 
+		String descricao = "Nome do fornecedor: " + getTitulo(this) +" "+ this.getNome() + "\nEmail do fornecedor: " + this.getEmail() + 
 				"\nCNPJ do fornecedor: " + this.cnpj + "\nCódigo do fornecedor: " + this.getCodigo();	
 		
 		return new String(descricao);

@@ -40,15 +40,15 @@ public class Cliente extends Entidade {
 	
 	//getters
 	
-	public String getTitulo(String sexo)
+	public String getTitulo(Cliente cliente)
 	{
 		String titulo = new String();
 		
-		if(sexo.equals("m") || sexo.equals("M"))
+		if(cliente.getSexo().equals("m") || cliente.getSexo().equals("M"))
 		{
 			titulo = "Prezado Senhor Cliente";
 		}
-		else if(sexo.equals("f") || sexo.equals("F"))
+		else if(cliente.getSexo().equals("f")|| cliente.getSexo().equals("F"))
 		{
 			titulo = "Prezada Senhora Cliente";
 		}
@@ -59,7 +59,7 @@ public class Cliente extends Entidade {
 	public String getDescricao()
 
 	{
-		String descricao = "Nome do cliente: " + getTitulo(getSexo()) + " " + this.getNome() + "\nEmail do cliente: " + this.getEmail() + 
+		String descricao = "Nome do cliente: " + getTitulo(this) + " " + this.getNome() + "\nEmail do cliente: " + this.getEmail() + 
 				"\nCPF do cliente: " + this.cpf + "\nCódigo do cliente: " + this.getCodigo();	
 		
 		return new String(descricao);

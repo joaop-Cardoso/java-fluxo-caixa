@@ -54,7 +54,7 @@ public class RankingClientes {
 		Set<Cliente> lista = ranking.keySet();
 		for(Cliente a: lista)
 		{
-			relatorio = relatorio + "Cliente: " + a.getNome() + " Total de vendas:" + calculaValorCliente(a) + "\n";
+			relatorio = relatorio + "Cliente: " + a.getNome() + " | Total de vendas: R$" + calculaValorCliente(a) + "\n";
 		}
 		
 		return relatorio;
@@ -70,7 +70,6 @@ public class RankingClientes {
 			if(novo.get(i).getCliente().equals(cliente))
 			valor_total = valor_total + novo.get(i).getValor();
 		}
-		
 		return valor_total;
 	}
 		
@@ -80,12 +79,11 @@ public class RankingClientes {
 		{
 			String string = ranking.get(cliente).toString();
 			return string;
-		}else 
+		}
+		else 
 		{
 			throw new NullPointerException("Cliente não encontrado");
 		}
-		
-		
 	}
 	
 	

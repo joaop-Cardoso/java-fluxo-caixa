@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class HistoricoReceber implements Historico{
 	
-	static private List<ContaAReceber> listaContas;
+	private List<ContaAReceber> listaContas;
 
 	public HistoricoReceber()
 	{

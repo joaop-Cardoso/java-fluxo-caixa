@@ -5,5 +5,5 @@
  * @author joaop
  *
  */
-module siguro {
+module projetohilton {
 }
