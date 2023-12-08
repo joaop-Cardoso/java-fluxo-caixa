@@ -12,7 +12,7 @@ public class Teste {
 		
 	
 		//--------teste de Cliente e Fornecedor-------------
-	/*
+	
 		Cliente c1 = new Cliente("Joaozinho", "joaozinholegal@gmail.com", "M", "12345678910");
 		System.out.println(c1.getDescricao());
 		
@@ -20,7 +20,7 @@ public class Teste {
 		
 		Fornecedor f1 = new Fornecedor("Almerinda", "almerindamassa@gmail.com", "F", "12345678910123");
 		System.out.println(f1.getDescricao());
-	*/
+	
 		//------------------fim de teste--------------------
 
 		
